@@ -1058,7 +1058,7 @@ var Geocoder = L.Control.extend({
   _enableMapScrollWheelZoom: function (event) {
     // Re-enable scroll wheel zoom (if previously enabled) after
     // leaving the results box
-    if (this._scrollWheelZoomEnabled) {
+    if (this._scrollWheelZoomEnabled && this._map) {
       this._map.scrollWheelZoom.enable();
     }
   },
