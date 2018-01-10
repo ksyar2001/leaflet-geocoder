@@ -721,7 +721,7 @@ var Geocoder = L.Control.extend({
 
   // Set full width of expanded input, if enabled
   setFullWidth: function () {
-    if (this.options.fullWidth) {
+    if (this.options.fullWidth && this._map) {
       // If fullWidth setting is a number, only expand if map container
       // is smaller than that breakpoint. Otherwise, clear width
       // Always ask map to invalidate and recalculate size first
