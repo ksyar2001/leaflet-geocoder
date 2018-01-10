@@ -5,14 +5,12 @@
 [![Gitter chat](https://img.shields.io/gitter/room/pelias/pelias.svg?style=flat-square)](https://gitter.im/pelias/pelias)
 [![Leaflet 1.0.0 ready](https://img.shields.io/badge/Leaflet%201.0.0-%E2%9C%93-brightgreen.svg?style=flat-square)](http://leafletjs.com/)
 
-Leaflet + Mapzen Search geocoding plugin
+Leaflet + Mapbox  Search geocoding plugin
 ========================================
 
-A plugin that adds the ability to search (geocode) a Leaflet-powered map using [Mapzen Search](https://mapzen.com/projects/search) or your own hosted version of the [Pelias Geocoder API](https://github.com/pelias/api).
+A plugin that adds the ability to search (geocode) a Leaflet-powered map using Mapbox Search for LifeMapping project
+To be used @type/leaflet-geocoder-mapzen
 
-## Demo
-
-[See it in action!](https://mapzen.github.io/leaflet-geocoder/)
 
 ## Requirements
 
