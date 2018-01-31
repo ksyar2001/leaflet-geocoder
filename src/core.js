@@ -270,10 +270,12 @@ var Geocoder = L.Control.extend({
     // Prevent lack of input from sending a malformed query to Pelias
     if (!input) return;
 
-    var url = this.options.url + '/search';
-    var params = {
-      text: input
-    };
+    var url = this.options.url + encodeURIComponent(input) + ".json";
+    var params = {};
+    // var url = this.options.url + '/search';
+    // var params = {
+    //   text: input
+    // };
 
     this.callPelias(url, params, 'search');
   },
