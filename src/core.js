@@ -55,7 +55,7 @@ var Geocoder = L.Control.extend({
 
   options: {
     position: 'topleft',
-    attribution: 'Geocoding by <a href="https://mapzen.com/projects/search/">Mapzen</a>',
+    attribution: 'Geocoding by <a href="https://www.mapbox.com/">Mapbox</a>',
     // url: 'https://search.mapzen.com/v1',
     url: 'https://api.mapbox.com/geocoding/v5/mapbox.places/',
     placeholder: null, // Note: this is now just an alias for textStrings.INPUT_PLACEHOLDER
