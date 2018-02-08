@@ -55,7 +55,7 @@ var Geocoder = L.Control.extend({
 
   options: {
     position: 'topleft',
-    attribution: 'Geocoding by <a href="https://mapzen.com/projects/search/">Mapzen</a>',
+    attribution: 'Geocoding by <a href="https://www.mapbox.com/">Mapbox</a>',
     // url: 'https://search.mapzen.com/v1',
     url: 'https://api.mapbox.com/geocoding/v5/mapbox.places/',
     placeholder: null, // Note: this is now just an alias for textStrings.INPUT_PLACEHOLDER
@@ -270,10 +270,12 @@ var Geocoder = L.Control.extend({
     // Prevent lack of input from sending a malformed query to Pelias
     if (!input) return;
 
-    var url = this.options.url + '/search';
-    var params = {
-      text: input
-    };
+    var url = this.options.url + encodeURIComponent(input) + ".json";
+    var params = {};
+    // var url = this.options.url + '/search';
+    // var params = {
+    //   text: input
+    // };
 
     this.callPelias(url, params, 'search');
   },
@@ -529,7 +531,7 @@ var Geocoder = L.Control.extend({
     var resultsContainer = this._results;
 
     // Reset and display results container
-    resultsContainer.innerHTML = '';
+    resultsContainer.textContent = '';
     resultsContainer.style.display = 'block';
     // manage result box height
     resultsContainer.style.maxHeight = (this._map.getSize().y - resultsContainer.offsetTop - this._container.offsetTop - RESULTS_HEIGHT_MARGIN) + 'px';
@@ -563,7 +565,7 @@ var Geocoder = L.Control.extend({
       //   layerIcon.title = 'layer: ' + feature.properties.layer;
       // }
 
-      resultItem.innerHTML += this.highlight(feature.place_name, input);
+      resultItem.textContent += this.highlight(feature.place_name, input);
     })
   },
 
@@ -571,7 +573,7 @@ var Geocoder = L.Control.extend({
     var resultsContainer = this._results;
 
     // Reset and display results container
-    resultsContainer.innerHTML = '';
+    resultsContainer.textContent = '';
     resultsContainer.style.display = 'block';
 
     var messageEl = L.DomUtil.create('div', 'leaflet-pelias-message', resultsContainer);
@@ -637,7 +639,7 @@ var Geocoder = L.Control.extend({
       this.fitBoundingBox(selected.feature.bbox);
     } else {
       this.removeMarkers();
-      this.showMarker(selected.innerHTML, latlng);
+      this.showMarker(selected.textContent, latlng);
     }
     this.fire('select', {
       originalEvent: originalEvent,
@@ -694,7 +696,7 @@ var Geocoder = L.Control.extend({
     // Destroy contents if input has also cleared
     // OR if force is true
     if (this._input.value === '' || force === true) {
-      this._results.innerHTML = '';
+      this._results.textContent = '';
     }
 
     // Turn on scrollWheelZoom, if disabled. (`mouseout` does not fire on
@@ -774,7 +776,7 @@ var Geocoder = L.Control.extend({
 
     this._search = L.DomUtil.create('a', 'leaflet-pelias-search-icon', this._container);
     this._reset = L.DomUtil.create('div', 'leaflet-pelias-close leaflet-pelias-hidden', this._container);
-    this._reset.innerHTML = '×';
+    this._reset.textContent = '×';
     this._reset.title = this.options.textStrings['RESET_TITLE_ATTRIBUTE'];
 
     this._results = L.DomUtil.create('div', 'leaflet-pelias-results leaflet-bar', this._container);
@@ -843,7 +845,7 @@ var Geocoder = L.Control.extend({
               self.fitBoundingBox(selected.feature.bbox);
             } else {
               self.removeMarkers();
-              self.showMarker(selected.innerHTML, L.GeoJSON.coordsToLatLng(selected.feature.geometry.coordinates));
+              self.showMarker(selected.textContent, L.GeoJSON.coordsToLatLng(selected.feature.geometry.coordinates));
             }
           }
         };
