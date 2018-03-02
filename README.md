@@ -51,31 +51,6 @@ L.control.geocoder('<your-api-key>').addTo(map);
 
 **Step 4**: Rejoice!
 
-### Want this as a module?
-
-Experienced developers can install with [npm](https://www.npmjs.com/):
-
-```sh
-npm install leaflet-geocoder-mapzen
-```
-
-And then import it in your module system. For instance, with [Browserify](http://browserify.org/):
-
-```javascript
-// Require Leaflet first
-var L = require('leaflet');
-
-// Requiring the plugin extends Leaflet automatically
-require('leaflet-geocoder-mapzen');
-
-// You can also store a reference to the geocoder constructor in the require()
-var MyGeocoderPlugin = require('leaflet-geocoder-mapzen');
-
-// Now you can do step 2 and 3 from "Basic usage" instructions, above
-```
-
-This plugin implements the [Universal Module Definition](https://github.com/umdjs/umd) so you can also use it in AMD and CommonJS environments.
-
 #### ES2015 (ECMAScript 6)
 
 To import this plugin in ES2015 environments, the `import` syntax is supported:
