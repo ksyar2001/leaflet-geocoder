@@ -8,7 +8,7 @@
 Leaflet + Mapbox  Search geocoding plugin
 ========================================
 
-A plugin that adds the ability to search (geocode) a Leaflet-powered map using Mapbox Search for LifeMapping project
+A plugin that adds the ability to search (geocode) a Leaflet-powered map using Mapbox Search
 To be used @type/leaflet-geocoder-mapzen
 
 
@@ -18,8 +18,8 @@ Requires the **[Leaflet](https://github.com/Leaflet/Leaflet)** mapping library. 
 
 **Browser support** is IE8+ [(more details below)](#browser-support).
 
-To use the Mapzen Search service, **you need a Mapzen API key**.
-Get one from the [Mapzen developers portal](http://mapzen.com/developers/). It's free!
+To use the Mapbox Search service, **you need a Mapbox API key**.
+Get one from the [Mapzen developers portal](http://mapbox.com). It's free!
 
 ## Basic usage
 
@@ -43,17 +43,13 @@ var map = L.map('map').setView([40.7259, -73.9805], 12);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 ```
 
-**Step 3:** In JavaScript, add your geocoder with your [Mapzen API key]((http://mapzen.com/developers/)).
+**Step 3:** In JavaScript, add your geocoder with your [Mapbox API key]((http://mapbox.com)).
 
 ```javascript
 L.control.geocoder('<your-api-key>').addTo(map);
 ```
 
 **Step 4**: Rejoice!
-
-### There is also a tutorial
-
-It has much more detailed walkthrough instructions and is very friendly for beginners. No coding experience is necessary! [Check it out here](https://mapzen.com/documentation/search/add-search-to-a-map/).
 
 ### Want this as a module?
 
